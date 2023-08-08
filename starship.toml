@@ -1,0 +1,50 @@
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[username]
+format = '[$user]($style) '
+
+[hostname]
+ssh_symbol = ''
+format = '[@$ssh_symbol$hostname]($style) '
+
+[git_branch]
+format = ' [$symbol$branch(:$remote_branch)]($style)'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+modified = '*'
+
+[battery]
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
+
+[cmd_duration]
+format = '[$duration]($style) '
+
+[erlang]
+symbol = "ⓔ "
+
+[nodejs]
+symbol = "[⬢](bold green) "
+disabled = true
+
+[pulumi]
+symbol = "🧊 "
+
+[package]
+disabled = true
+
+[dart]
+disabled = true
+
+[php]
+disabled = true
+
+[lua]
+disabled = true
+
