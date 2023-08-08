@@ -2,4 +2,5 @@
 !.gitignore
 !starship.toml
 !nvim
+!tmux
 
