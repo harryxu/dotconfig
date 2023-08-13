@@ -1,6 +1,12 @@
 *
+
 !.gitignore
 !starship.toml
 !nvim
 !tmux
+
+!zsh/
+!zsh/zshrc
+
+!oh-my-zsh
 

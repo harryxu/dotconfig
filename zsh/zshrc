@@ -1,0 +1,18 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.config/oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git autojump rbenv nvm)
+
+source $ZSH/oh-my-zsh.sh
+
+if ! type "$nvim" > /dev/null; then
+  export EDITOR='nvim'
+  alias vim='nvim'
+  alias vi='nvim'
+fi
+
+alias tmuxa="tmux attach-session -t"
+
+eval "$(starship init zsh)"
