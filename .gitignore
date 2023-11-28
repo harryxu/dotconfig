@@ -4,6 +4,9 @@
 !starship.toml
 !nvim
 !tmux
+!fish
+!fish/*
+!fish/**/*
 
 !zsh/
 !zsh/zshrc
