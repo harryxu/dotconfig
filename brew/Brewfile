@@ -33,4 +33,4 @@ cask "font-iosevka-nerd-font"
 cask "font-iosevka-slab"
 cask "loop"
 cask "orbstack"
-cask "wezterm
+cask "wezterm"
