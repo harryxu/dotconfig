@@ -8,10 +8,17 @@
 !fish/*
 !fish/**/*
 
+!wezterm
+!wezterm/*
+!wezterm/**/*
+
 !zsh/
 !zsh/zshrc
 
 !oh-my-zsh
+
+!brew/
+!brew/*
 
 !.editorconfig
 
