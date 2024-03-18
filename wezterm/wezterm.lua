@@ -30,12 +30,20 @@ config.color_scheme = 'Relaxed'
 config.font = get_font('Iosevka Nerd Font', 500)
 config.font_size = 23.0
 
+config.command_palette_font_size = 19
+
+config.window_padding ={
+  top = 0,
+  bottom = 0,
+}
+
 config.window_frame = {
   font = get_font('Iosevka Nerd Font', 500),
   font_size = 18,
 }
 
-config.command_palette_font_size = 19
+
+config.use_fancy_tab_bar = true
 
 
 -- This function returns the suggested title for a tab.
