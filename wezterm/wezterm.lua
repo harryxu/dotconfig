@@ -37,14 +37,16 @@ config.window_padding ={
   bottom = 0,
 }
 
+--config.window_decorations = 'RESIZE'
+
+
+-- Tab Bar
+config.use_fancy_tab_bar = true
+config.tab_max_width = 100
 config.window_frame = {
   font = get_font('Iosevka Nerd Font', 500),
   font_size = 18,
 }
-
-
-config.use_fancy_tab_bar = true
-
 
 -- This function returns the suggested title for a tab.
 -- It prefers the title that was set via `tab:set_title()`
@@ -62,7 +64,6 @@ function tab_title(tab_info)
 end
 
 
--- Tab Bar
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
   local background = '#C5C5C5'
   local foreground = '#808080'
