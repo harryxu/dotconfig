@@ -39,6 +39,9 @@ config.window_padding ={
 
 --config.window_decorations = 'RESIZE'
 
+config.enable_kitty_keyboard = true
+config.enable_csi_u_key_encoding = false
+
 
 -- Tab Bar
 config.use_fancy_tab_bar = true
