@@ -17,8 +17,7 @@
 
 !oh-my-zsh
 
-!brew/
-!brew/*
+!brew/Brewfile
 
 !.editorconfig
 
