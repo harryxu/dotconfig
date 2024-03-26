@@ -17,4 +17,7 @@ if test -e $PYENV_ROOT
   pyenv init - | source
 end
 
+# bat command theme
+set -Ux BAT_THEME ansi
+
 starship init fish | source
