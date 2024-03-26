@@ -27,7 +27,7 @@ end
 -- Color scheme
 config.color_scheme = 'Relaxed'
 
-config.font = get_font('Iosevka Nerd Font', 500)
+config.font = get_font('IosevkaTerm Nerd Font', 500)
 config.font_size = 23.0
 
 config.command_palette_font_size = 19
