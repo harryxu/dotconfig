@@ -10,6 +10,8 @@ if test -e ~/.local/bin
   fish_add_path -m ~/.local/bin
 end
 
+alias tmux='tmux -u'
+
 # pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
 if test -e $PYENV_ROOT
