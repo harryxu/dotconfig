@@ -22,4 +22,8 @@ end
 # bat command theme
 set -Ux BAT_THEME ansi
 
+if type -q zoxide
+    zoxide init fish | source
+end
+
 starship init fish | source
