@@ -15,6 +15,9 @@
 !zsh/
 !zsh/zshrc
 
+!zed/
+!zed/settings.json
+
 !oh-my-zsh
 
 !brew/
