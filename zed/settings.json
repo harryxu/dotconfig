@@ -14,12 +14,15 @@
   "theme": "macOS Classic Light",
   "vim_mode": true,
   "format_on_save": "off",
+  "project_panel": {
+    "auto_reveal_entries": false
+  },
+  "languages": {
+    "JSON": { "format_on_save": "on" }
+  },
   "git": {
     "inline_blame": {
       "enabled": false
     }
-  },
-  "languages": {
-    "JSON": { "format_on_save": "on" }
   }
 }

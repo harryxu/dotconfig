@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-1": "pane::RevealInProjectPanel"
+    }
+  }
+]

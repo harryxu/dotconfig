@@ -17,6 +17,7 @@
 
 !zed/
 !zed/settings.json
+!zed/keymap.json
 
 !oh-my-zsh
 
