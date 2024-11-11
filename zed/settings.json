@@ -7,6 +7,13 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-1.5-flash"
+    },
+    "version": "2"
+  },
   "ui_font_size": 18,
   "ui_font_family": "Ubuntu Sans Mono",
   "buffer_font_size": 21,
@@ -14,6 +21,7 @@
   "theme": "macOS Classic Light",
   "vim_mode": true,
   "format_on_save": "off",
+  "soft_wrap": "editor_width",
   "project_panel": {
     "auto_reveal_entries": false
   },
