@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "outline_panel": {
+    "dock": "right"
+  },
   "assistant": {
     "default_model": {
       "provider": "google",
@@ -16,13 +19,13 @@
   },
   "ui_font_size": 18,
   "ui_font_family": "Ubuntu Sans Mono",
-  "buffer_font_size": 21,
+  "buffer_font_size": 23,
   "buffer_font_family": "Iosevka Nerd Font",
   "theme": "macOS Classic Light",
-  "vim_mode": true,
   "format_on_save": "off",
   "soft_wrap": "editor_width",
   "project_panel": {
+    "dock": "left",
     "auto_reveal_entries": false
   },
   "languages": {
@@ -32,5 +35,10 @@
     "inline_blame": {
       "enabled": false
     }
+  },
+
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "never"
   }
 }
