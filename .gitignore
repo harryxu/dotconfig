@@ -12,6 +12,11 @@
 !wezterm/*
 !wezterm/**/*
 
+!kitty
+!kitty/*
+!kitty/**/*
+
+
 !zsh/
 !zsh/zshrc
 
@@ -25,4 +30,3 @@
 !brew/Brewfile
 
 !.editorconfig
-
