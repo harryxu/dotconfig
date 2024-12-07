@@ -1,3 +1,4 @@
 # Custom configuration to override defaults.
 
-font_size 28.0
+font_family      family="Iosevka Nerd Font Mono"
+font_size 25.0
