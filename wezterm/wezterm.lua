@@ -125,12 +125,13 @@ local color_bg_100 = brightness_auto_adjust(scheme_def.background, 0.100)
 local color_bg_165 = brightness_auto_adjust(scheme_def.background, 0.165)
 local color_bg_300 = brightness_auto_adjust(scheme_def.background, 0.300)
 local color_bg_500 = brightness_auto_adjust(scheme_def.background, 0.500)
+local color_bg_700 = brightness_auto_adjust(scheme_def.background, 0.700)
 local color_hl = scheme_def.cursor_bg or scheme_def.cursor_selection_bg or scheme_def.foreground
 
 -- Sizings and Spacings:
 config.window_padding = {
-  left = 5,
-  right = 5,
+  left = 15,
+  right = 15,
   top = 24,
   bottom = 12
 }
@@ -151,7 +152,7 @@ config.window_frame = {
     -- Whatever font is selected here, it will have the
     -- main font setting appended to it to pick up any
     -- fallback fonts you may have used there.
-    font = wezterm.font { family = 'Roboto', weight = 'DemiBold' },
+    font = wezterm.font { family = 'Roboto', weight = 500 },
 
     -- The size of the font in the tab bar.
     -- Default to 10.0 on Windows but 12.0 on other systems
@@ -189,7 +190,7 @@ config.colors = {
 
     inactive_tab = {
       bg_color = 'none',
-      fg_color = color_bg_500,
+      fg_color = color_bg_700,
     },
   }
 }
