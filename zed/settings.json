@@ -7,13 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "outline_panel": {
     "dock": "right"
   },
   "assistant": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-1.5-flash"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },

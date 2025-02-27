@@ -4,5 +4,18 @@
     "bindings": {
       "cmd-1": "pane::RevealInProjectPanel"
     }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction_conflict",
+    "bindings": {
+      // Here we bind tab to accept even when there's a language server completion
+      "tab": "editor::AcceptEditPrediction"
+    }
   }
 ]
