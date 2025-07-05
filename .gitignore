@@ -4,6 +4,11 @@
 !starship.toml
 !nvim
 !tmux
+
+!tmux
+!tmux/*
+tmux/plugins
+
 !fish
 !fish/*
 !fish/**/*
