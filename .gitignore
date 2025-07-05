@@ -21,7 +21,6 @@ tmux/plugins
 !kitty/*
 !kitty/**/*
 
-
 !zsh/
 !zsh/zshrc
 
@@ -45,3 +44,10 @@ tmux/plugins
 !git/config.example
 
 !.editorconfig
+
+!hypr/
+!hypr/*
+hypr/custom.conf
+
+!waybar/
+!waybar/*
