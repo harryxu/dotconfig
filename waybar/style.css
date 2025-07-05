@@ -23,7 +23,9 @@
 #network,
 #bluetooth,
 #pulseaudio,
-#clock {
+#clock,
+#custom-power
+{
   min-width: 12px;
   margin-right: 20px;
 }

@@ -16,7 +16,8 @@
       "pulseaudio",
       "cpu",
       "power-profiles-daemon",
-      "battery"
+      "battery",
+      "custom/power"
     ],
     "hyprland/workspaces": {
       "on-click": "activate",
@@ -113,6 +114,11 @@
         "performance":  "󰡴"
       }
     },
+    "custom/power": {
+      "format": "⏻",  
+      "tooltip": "Power Menu",
+      "on-click": "~/.config/waybar/power-menu.sh"
+    }
     //"custom/dropbox": {
     //  "format": "",
     //  "on-click": "nautilus ~/Dropbox",

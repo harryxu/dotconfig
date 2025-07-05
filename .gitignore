@@ -51,3 +51,6 @@ hypr/custom.conf
 
 !waybar/
 !waybar/*
+
+!wofi/
+!wofi/*
