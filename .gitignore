@@ -16,7 +16,6 @@
 !kitty/*
 !kitty/**/*
 
-
 !zsh/
 !zsh/zshrc
 
@@ -40,3 +39,10 @@
 !git/config.example
 
 !.editorconfig
+
+!hypr/
+!hypr/*
+hypr/custom.conf
+
+!waybar/
+!waybar/*
