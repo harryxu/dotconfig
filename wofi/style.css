@@ -62,6 +62,7 @@ window {
 #entry:selected {
   outline: none;
   border: none;
+  background-color: #1A1D2D;
 }
 
 #entry:selected #text {

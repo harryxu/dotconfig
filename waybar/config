@@ -1,3 +1,4 @@
+// vim: set filetype=json 
 {
   "layer": "top",
     "position": "top",
@@ -17,7 +18,8 @@
       "cpu",
       "power-profiles-daemon",
       "battery",
-      "custom/power"
+      "custom/power",
+      "custom/control"
     ],
     "hyprland/workspaces": {
       "on-click": "activate",
@@ -122,6 +124,11 @@
       "format": "⏻",  
       "tooltip": "Power Menu",
       "on-click": "~/.config/waybar/power-menu.sh"
+    },
+    "custom/control": {
+      "format": "",  
+      "tooltip": "Control center",
+      "on-click": "swaync-client -t -sw"
     }
     //"custom/dropbox": {
     //  "format": "",
