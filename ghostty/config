@@ -11,3 +11,4 @@ cursor-style = block
 
 window-padding-x = 10
 
+config-file = ?custom-config
