@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
+show_power_menu() {
+  local menu_options="󰤄  Sleep
+  Lock
+  Logout
+  Reboot
+⏻  Power Off"
 
-choice=$(printf "⏻  Power Off\n  Reboot\n  Logout\n  Lock" | wofi --dmenu --insensitive --cache-file /dev/null)
+  choice=$(printf "$menu_options" | wofi --dmenu --insensitive --cache-file /dev/null)
 
-case "$choice" in
-"⏻  Power Off") systemctl poweroff ;;
-"  Reboot") systemctl reboot ;;
-"  Logout") hyprctl dispatch exit ;;
-"  Lock") swaylock ;; # 替换为你的锁屏工具
-esac
+  case "$choice" in
+  "⏻  Power Off") systemctl poweroff ;;
+  "  Reboot") systemctl reboot ;;
+  "  Logout") hyprctl dispatch exit ;;
+  "  Lock") hyprlock ;;
+  "󰤄  Sleep") systemctl suspend ;;
+  esac
+}
+
+show_power_menu
