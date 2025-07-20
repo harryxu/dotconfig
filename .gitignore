@@ -58,3 +58,7 @@ hypr/custom.conf
 
 !wofi/
 !wofi/*
+
+!swaync/
+!swaync/*
+
