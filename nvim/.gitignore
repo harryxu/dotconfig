@@ -5,6 +5,8 @@
 *.bak
 *.o
 *.so
+.DS_Store
+
 
 !.gitignore
 !.gitmodules
