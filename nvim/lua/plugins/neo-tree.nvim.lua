@@ -10,8 +10,8 @@ return {
   config = function(_, opts)
     require("neo-tree").setup({
       filesystem = {
-        bind_to_cwd = false, -- 不绑定到当前工作目录
-        follow_current_file = { enabled = false }, -- 不跟随当前文件
+        bind_to_cwd = false,
+        follow_current_file = { enabled = false },
         filtered_items = {
           hide_dotfiles = false,
           hide_gitignored = false

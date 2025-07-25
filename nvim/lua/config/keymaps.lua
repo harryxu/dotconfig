@@ -51,4 +51,5 @@ if Util.has("vim-tmux-navigator") then
   map({'n'}, '<C-L>', ':<C-U>TmuxNavigateRight<cr>', { silent = true })
 end
 
-vim.keymap.set({ 'n', 'i', 'v' }, '<F3>', '<ESC>:Neotree toggle<CR>')
+map({ 'n', 'i', 'v' }, '<F3>', '<ESC>:Neotree toggle<CR>', { desc = "Toggle NeoTree" })
+map({ 'n', 'v' }, '<leader>1', '<ESC>:Neotree reveal<CR>', { desc = "Reveal current file in NeoTree" })
