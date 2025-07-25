@@ -50,3 +50,5 @@ if Util.has("vim-tmux-navigator") then
   map({'n'}, '<C-K>', ':<C-U>TmuxNavigateUp<cr>', { silent = true })
   map({'n'}, '<C-L>', ':<C-U>TmuxNavigateRight<cr>', { silent = true })
 end
+
+vim.keymap.set({ 'n', 'i', 'v' }, '<F3>', '<ESC>:Neotree toggle<CR>')

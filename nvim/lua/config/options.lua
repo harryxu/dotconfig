@@ -33,7 +33,6 @@ vim.opt.showmode = true -- show current mode down the bottom
 vim.opt.number = true
 
 -- Do Not mess up the system clipboard! I realy don't like LazyVim's default setting (unnamedplus) for this.
--- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua#L22
 vim.opt.clipboard = ""
 
 vim.opt.ignorecase = true
