@@ -12,17 +12,10 @@ return {
     "octaltree/cmp-look",
     "brenoprata10/nvim-highlight-colors",
   },
-  config = function()
+  opts = function(_, opts)
     local cmp = require("cmp")
 
-    cmp.setup({
-      window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-      },
-    })
-
-    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+    -- Use buffer source for `/` and `?`
     cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
@@ -30,9 +23,9 @@ return {
       },
     })
 
-    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    -- Use cmdline & path source for ':'
     cmp.setup.cmdline(":", {
-      enabled=true,
+      enabled = true,
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "path" },
