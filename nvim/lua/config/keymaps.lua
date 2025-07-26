@@ -20,11 +20,12 @@ end
 
 local keymap = vim.keymap
 
--- save file
+-- Save file
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 map({ "i", "v", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 -- Commenting
+---@diagnostic disable-next-line: undefined-field
 if vim.loop.os_uname().sysname == "Darwin" then
   keymap.set("v", "<D-/>", "gc", { remap = true })
   keymap.set("n", "<D-/>", ":norm gcc<CR>")
@@ -49,6 +50,11 @@ end
 map({ "n", "i", "v" }, "<F3>", "<ESC>:Neotree toggle<CR>", { desc = "Toggle NeoTree" })
 map({ "n", "v" }, "<leader>1", "<ESC>:Neotree reveal<CR>", { desc = "Reveal current file in NeoTree" })
 
+-- Show Diagnostic
 map("n", "<leader>dd", function()
   vim.diagnostic.open_float(nil, { focusable = false })
 end, { desc = "Show diagnostic for current line" })
+
+-- Code Action
+map({ "n", "i" }, "<D-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
+map({ "n", "i" }, "<C-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
