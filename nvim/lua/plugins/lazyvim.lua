@@ -1,4 +1,10 @@
 return {
+
+  -- Plugin manager
+  { "folke/lazy.nvim", version = "*" },
+
+  -- Neovim config for the lazy
+  {
     "LazyVim/LazyVim",
     priority = 10000,
     lazy = false,
@@ -8,4 +14,5 @@ return {
     opts = {
       colorscheme = "nordfox",
     },
-  }
+  },
+}

@@ -32,6 +32,8 @@ vim.opt.showcmd = true -- show incomplete cmds down the bottom
 vim.opt.showmode = true -- show current mode down the bottom
 vim.opt.number = true
 
+vim.opt.updatetime = 2000
+
 -- Do Not mess up the system clipboard! I realy don't like LazyVim's default setting (unnamedplus) for this.
 vim.opt.clipboard = ""
 

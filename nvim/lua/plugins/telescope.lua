@@ -8,8 +8,6 @@ return {
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<C-p>", "<cmd>Telescope git_files previewer=false<cr>", desc = "Find Files (git-files)" },
     { "<D-p>", "<cmd>Telescope git_files previewer=false<cr>", desc = "Find Files (git-files)" },
-
-    { "<C-S-p>", "<cmd>Telescope commands<cr>", desc = "Commands" },
   },
 
   opts = function()
@@ -20,9 +18,5 @@ return {
         },
       },
     }
-  end,
-
-  config = function()
-    require("telescope").load_extension("noice")
   end,
 }

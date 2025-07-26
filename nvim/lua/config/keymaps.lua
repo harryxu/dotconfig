@@ -20,8 +20,6 @@ end
 
 local keymap = vim.keymap
 
-keymap.set("n", "<F2>", ":nohlsearch<CR>")
-
 -- save file
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 map({ "i", "v", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
@@ -50,3 +48,7 @@ end
 
 map({ "n", "i", "v" }, "<F3>", "<ESC>:Neotree toggle<CR>", { desc = "Toggle NeoTree" })
 map({ "n", "v" }, "<leader>1", "<ESC>:Neotree reveal<CR>", { desc = "Reveal current file in NeoTree" })
+
+map("n", "<leader>dd", function()
+  vim.diagnostic.open_float(nil, { focusable = false })
+end, { desc = "Show diagnostic for current line" })
