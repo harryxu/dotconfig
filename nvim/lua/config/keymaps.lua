@@ -58,3 +58,17 @@ end, { desc = "Show diagnostic for current line" })
 -- Code Action
 map({ "n", "i" }, "<D-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
 map({ "n", "i" }, "<C-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
+
+-- Terminal mappings
+map({ "n" }, "<leader>jj", "<cmd>ToggleTerm direction=float<cr>", { desc = "Toggle Terminal" })
+map({ "n", "i" }, "<C-j>", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Toggle Terminal horizontal" })
+function _G.set_terminal_keymaps()
+  local opts = { buffer = 0 }
+  vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts) -- Move to left window
+  vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts) -- Move to below window
+  vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts) -- Move to above windo
+  vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts) -- Move to right window
+  vim.keymap.set("t", "<C-j>", [[<cmd>ToggleTerm<cr>]], opts)
+end
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

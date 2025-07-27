@@ -1,3 +1,5 @@
+-- Color highlighter for Neovim
+-- https://github.com/catgoose/nvim-colorizer.lua?tab=readme-ov-file#colorizerlua
 return {
   "catgoose/nvim-colorizer.lua",
   event = "BufReadPre",
