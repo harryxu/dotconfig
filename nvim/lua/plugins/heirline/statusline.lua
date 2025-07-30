@@ -13,7 +13,7 @@ local ViMode = {
   end,
   static = {
     mode_names = {
-      n = "N",
+      n = "NORMAL",
       no = "N?",
       nov = "N?",
       noV = "N?",
@@ -22,7 +22,7 @@ local ViMode = {
       niR = "Nr",
       niV = "Nv",
       nt = "Nt",
-      v = "V",
+      v = "VIRTUAL",
       vs = "Vs",
       V = "V_",
       Vs = "Vs",
@@ -31,7 +31,7 @@ local ViMode = {
       s = "S",
       S = "S_",
       ["\19"] = "^S",
-      i = "I",
+      i = "INSERT",
       ic = "Ic",
       ix = "Ix",
       R = "R",
@@ -524,7 +524,14 @@ local ShowCmd = {
   condition = function()
     return vim.o.cmdheight == 0
   end,
-  provider = ":%3.5(%S%)",
+  provider = function()
+    local cmd = vim.fn.getcmdline()
+    if cmd ~= "" then
+      return ":%3.5(%S%)"
+    else
+      return ""
+    end
+  end,
   hl = function(self)
     return { bold = true, fg = self:mode_color() }
   end,
@@ -533,11 +540,7 @@ local ShowCmd = {
 local Align = { provider = "%=" }
 local Space = { provider = " " }
 
-ViMode = utils.surround(
-  { separators.rounded_left, separators.rounded_right },
-  "bright_bg",
-  { MacroRec, ViMode, Snippets, ShowCmd }
-)
+ViMode = utils.surround({ separators.block, separators.block }, "bright_bg", { MacroRec, ViMode, Snippets, ShowCmd })
 
 local DefaultStatusline = {
   ViMode,
@@ -624,7 +627,7 @@ local StatusLines = {
   end,
   static = {
     mode_colors = {
-      n = "red",
+      n = "blue",
       i = "green",
       v = "cyan",
       V = "cyan",
