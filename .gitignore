@@ -4,6 +4,15 @@
 !starship.toml
 !nvim
 !tmux
+
+!nvim
+!nvim/*
+!nvim/**/*
+
+!tmux
+!tmux/*
+tmux/plugins
+
 !fish
 !fish/*
 !fish/**/*
@@ -15,7 +24,6 @@
 !kitty
 !kitty/*
 !kitty/**/*
-
 
 !zsh/
 !zsh/zshrc
@@ -36,4 +44,17 @@
 !brew/
 !brew/Brewfile
 
+!git
+!git/config.example
+
 !.editorconfig
+
+!hypr/
+!hypr/*
+hypr/custom.conf
+
+!waybar/
+!waybar/*
+
+!wofi/
+!wofi/*
