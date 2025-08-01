@@ -6,11 +6,6 @@
     }
   },
   {
-    "context": "Editor && edit_prediction",
-    "bindings": {
-      "tab": "editor::AcceptEditPrediction"
-    }
-  },
   {
     "context": "Editor && edit_prediction_conflict",
     "bindings": {
