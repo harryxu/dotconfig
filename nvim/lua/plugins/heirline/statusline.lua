@@ -22,9 +22,9 @@ local ViMode = {
       niR = "Nr",
       niV = "Nv",
       nt = "Nt",
-      v = "VIRTUAL",
+      v = "VISUAL",
       vs = "Vs",
-      V = "V_",
+      V = "VISUAL",
       Vs = "Vs",
       ["\22"] = "^V",
       ["\22s"] = "^V",
@@ -50,11 +50,12 @@ local ViMode = {
     },
   },
   provider = function(self)
-    return "%2(" .. self.mode_names[self.mode] .. "%)"
+    return "%2( " .. self.mode_names[self.mode] .. " %)"
   end,
   hl = function(self)
     local color = self:mode_color()
-    return { fg = color, bold = true }
+    local bg_color = self:mode_bg_color()
+    return { fg = color, bold = true, bg = bg_color }
   end,
   update = {
     "ModeChanged",
@@ -540,7 +541,8 @@ local ShowCmd = {
 local Align = { provider = "%=" }
 local Space = { provider = " " }
 
-ViMode = utils.surround({ separators.block, separators.block }, "bright_bg", { MacroRec, ViMode, Snippets, ShowCmd })
+-- ViMode = utils.surround({ separators.block, separators.block }, "bright_bg", { MacroRec, ViMode, Snippets, ShowCmd })
+ViMode = { ViMode, MacroRec, Snippets, ShowCmd }
 
 local DefaultStatusline = {
   ViMode,
@@ -628,10 +630,10 @@ local StatusLines = {
   static = {
     mode_colors = {
       n = "blue",
-      i = "green",
-      v = "cyan",
-      V = "cyan",
-      ["\22"] = "cyan", -- this is an actual ^V, type <C-v><C-v> in insert mode
+      i = "darkgreen",
+      v = "white",
+      V = "white",
+      ["\22"] = "white", -- this is an actual ^V, type <C-v><C-v> in insert mode
       c = "orange",
       s = "purple",
       S = "purple",
@@ -639,11 +641,31 @@ local StatusLines = {
       R = "orange",
       r = "orange",
       ["!"] = "red",
-      t = "green",
+      t = "yellow",
     },
     mode_color = function(self)
       local mode = conditions.is_active() and vim.fn.mode() or "n"
       return self.mode_colors[mode]
+    end,
+
+    mode_bg_colors = {
+      n = "bright_bg",
+      i = "green",
+      v = "darkcyan",
+      V = "darkcyan",
+      ["\22"] = "darkcyan",
+      c = "darkmagenta",
+      s = "bright_bg",
+      S = "bright_bg",
+      ["\19"] = "bright_bg",
+      R = "bright_bg",
+      r = "bright_bg",
+      ["!"] = "bright_bg",
+      t = "bright_fg",
+    },
+    mode_bg_color = function(self)
+      local mode = conditions.is_active() and vim.fn.mode() or "n"
+      return self.mode_bg_colors[mode]
     end,
   },
   fallthrough = false,
