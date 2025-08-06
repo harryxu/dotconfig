@@ -59,6 +59,21 @@ end, { desc = "Show diagnostic for current line" })
 map({ "n", "i" }, "<D-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
 map({ "n", "i" }, "<C-.>", vim.lsp.buf.code_action, { desc = "Code Action" })
 
+map({ "n", "i" }, "<C-w>", function()
+  local buftype = vim.bo.buftype
+  if buftype == "" then
+    local current_buf = vim.api.nvim_get_current_buf()
+    -- 尝试跳到下一个 buffer，如果只有一个就退回
+    local next_buffer = vim.fn.bufnr("#")
+    if vim.fn.buflisted(next_buffer) == 1 then
+      vim.cmd("buffer " .. next_buffer)
+    end
+    vim.cmd("bdelete " .. current_buf)
+  else
+    vim.cmd("quit")
+  end
+end, { desc = "Smart closing buffers or windows" })
+
 -- Terminal mappings
 map({ "n" }, "<leader>jj", "<cmd>ToggleTerm direction=float<cr>", { desc = "Toggle Terminal" })
 map({ "n", "i" }, "<C-;>", "<cmd>ToggleTerm direction=horizontal<cr>", { desc = "Toggle Terminal horizontal" })
