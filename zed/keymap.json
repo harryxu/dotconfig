@@ -7,6 +7,14 @@
       "ctrl-v": "editor::Paste"
     }
   },
+
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "ctrl-v": "vim::ToggleVisualBlock"
+    }
+  },
+
   {
     "context": "Editor && edit_prediction_conflict",
     "bindings": {

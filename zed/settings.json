@@ -45,6 +45,21 @@
   },
 
   "auto_install_extensions": {
-    "nvim-nightfox": true
+    "catppuccin-icons": true,
+    "dockerfile": true,
+    "emmet": true,
+    "fish": true,
+    "git-firefly": true,
+    "html": true,
+    "java": true,
+    "log": true,
+    "lua": true,
+    "macos-classic": true,
+    "material-icon-theme": true,
+    "catppuccin": true,
+    "nvim-nightfox": true,
+    "php": true,
+    "snippets": true,
+    "sql": true
   }
 }
