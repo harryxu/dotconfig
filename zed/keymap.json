@@ -6,7 +6,6 @@
     }
   },
   {
-  {
     "context": "Editor && edit_prediction_conflict",
     "bindings": {
       // Here we bind tab to accept even when there's a language server completion
