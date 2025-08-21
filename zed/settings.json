@@ -13,18 +13,17 @@
   "outline_panel": {
     "dock": "right"
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
     },
-    "version": "2"
   },
   "ui_font_size": 18,
   "ui_font_family": "Ubuntu Sans Mono",
   "buffer_font_size": 23,
   "buffer_font_family": "Iosevka Nerd Font",
-  "theme": "macOS Classic Light",
+  "theme": "Nightfox - opaque",
   "format_on_save": "off",
   "soft_wrap": "editor_width",
   "project_panel": {
@@ -43,5 +42,9 @@
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "never"
+  },
+
+  "auto_install_extensions": {
+    "nvim-nightfox": true
   }
 }
