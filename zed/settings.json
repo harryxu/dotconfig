@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": "Catppuccin Latte",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -17,7 +18,7 @@
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
-    },
+    }
   },
   "ui_font_size": 20,
   // "ui_font_family": "Ubuntu Sans Mono",
