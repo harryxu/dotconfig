@@ -19,11 +19,11 @@
       "model": "claude-3-5-sonnet-latest"
     },
   },
-  "ui_font_size": 18,
-  "ui_font_family": "Ubuntu Sans Mono",
-  "buffer_font_size": 23,
+  "ui_font_size": 20,
+  // "ui_font_family": "Ubuntu Sans Mono",
+  "buffer_font_size": 25,
   "buffer_font_family": "Iosevka Nerd Font",
-  "theme": "Nightfox - opaque",
+  "theme": "Dayfox - opaque",
   "format_on_save": "off",
   "soft_wrap": "editor_width",
   "project_panel": {
