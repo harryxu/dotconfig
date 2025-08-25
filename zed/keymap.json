@@ -7,19 +7,32 @@
       "ctrl-v": "editor::Paste"
     }
   },
-
   {
     "context": "vim_mode == normal",
     "bindings": {
       "ctrl-v": "vim::ToggleVisualBlock"
     }
   },
-
   {
     "context": "Editor && edit_prediction_conflict",
     "bindings": {
       // Here we bind tab to accept even when there's a language server completion
       "tab": "editor::AcceptEditPrediction"
+    }
+  },
+  // Restoring common text editing keybindings for vim mode
+  // https://github.com/zed-industries/zed/blob/main/docs/src/vim.md#restoring-common-text-editing-keybindings
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "editor::Copy", // vim default: return to normal mode
+      "ctrl-x": "editor::Cut", // vim default: decrement
+      "ctrl-v": "editor::Paste", // vim default: visual block mode
+      "ctrl-y": "editor::Undo", // vim default: line up
+      "ctrl-f": "buffer_search::Deploy", // vim default: page down
+      "ctrl-o": "workspace::Open", // vim default: go back
+      "ctrl-s": "workspace::Save", // vim default: show signature
+      "ctrl-a": "editor::SelectAll" // vim default: increment
     }
   }
 ]
