@@ -62,3 +62,8 @@ hypr/custom.conf
 !swaync/
 !swaync/*
 
+
+# KDE Config
+!plasma-org.kde.plasma.desktop-appletsrc
+!kglobalshortcutsrc
+!dolphinrc
