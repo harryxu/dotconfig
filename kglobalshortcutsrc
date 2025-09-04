@@ -1,5 +1,6 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-8fff538c-a777-4458-9d67-6261b5a6fb90=none,none,Switch to activity "Default"
 switch-to-activity-e60b827e-31ea-4c49-8f94-0c6a4155d393=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
@@ -9,7 +10,8 @@ Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Lay
 _k_friendly_name=Keyboard Layout Switcher
 
 [google-chrome]
-5F5BDB2EEF34E3EEF6F7FD1BB24E270F-toggle-reader-view=,none,Toggle the Reader View
+5F5BDB2EEF34E3EEF6F7FD1BB24E270F-toggle-reader-view=none,none,Toggle the Reader View
+655F4F409BAF11398E43D9BDC209C71A-toggle-reader-view=,none,Toggle the Reader View
 _k_friendly_name=Google Chrome
 
 [kaccess]
@@ -256,7 +258,7 @@ switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
 
-[services][io.ulauncher.Ulauncher.desktop]
+[services][net.local.ulauncher-toggle.desktop]
 _launch=Alt+E
 
 [services][org.kde.CrowTranslate.desktop]
