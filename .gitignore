@@ -64,7 +64,5 @@ hypr/custom.conf
 
 
 # KDE Config
-!plasma-org.kde.plasma.desktop-appletsrc
 !kglobalshortcutsrc
-!kwinrc
 !dolphinrc
