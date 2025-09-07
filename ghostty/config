@@ -5,6 +5,7 @@ font-style-bold = false
 
 #theme = Relaxed
 theme = nord
+window-theme = dark
 
 shell-integration-features = no-cursor
 cursor-style = block
