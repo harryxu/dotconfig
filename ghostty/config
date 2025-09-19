@@ -4,11 +4,12 @@ font-thicken = true
 font-style-bold = false
 
 #theme = Relaxed
-theme = nord
+theme = Nord
 window-theme = dark
 
-shell-integration-features = no-cursor
 cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 window-padding-x = 10
 
