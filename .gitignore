@@ -45,7 +45,7 @@ tmux/plugins
 !brew/Brewfile
 
 !git
-!git/config.example
+!git/config
 
 !.editorconfig
 
