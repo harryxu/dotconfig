@@ -62,3 +62,7 @@ hypr/custom.conf
 !swaync/
 !swaync/*
 
+
+# KDE Config
+!kglobalshortcutsrc
+!dolphinrc
