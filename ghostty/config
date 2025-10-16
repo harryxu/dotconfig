@@ -18,3 +18,9 @@ config-file = ?custom-config
 # bind `cmd s` to `ctrl s`
 # https://github.com/ghostty-org/ghostty/discussions/3493?utm_source=chatgpt.com#discussioncomment-11685022
 keybind = cmd+s=text:\x13
+keybind = alt+t=new_tab
+keybind = alt+shift+]=next_tab
+keybind = alt+shift+[=previous_tab
+keybind = alt+w=close_tab
+keybind = ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
