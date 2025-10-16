@@ -22,5 +22,5 @@ keybind = alt+t=new_tab
 keybind = alt+shift+]=next_tab
 keybind = alt+shift+[=previous_tab
 keybind = alt+w=close_tab
-keybind = ctrl+c=copy_to_clipboard
-keybind = ctrl+v=paste_from_clipboard
+keybind = alt+c=copy_to_clipboard
+keybind = alt+v=paste_from_clipboard
