@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "icon_theme": "Catppuccin Latte",
+  "icon_theme": "Material Icon Theme",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -21,10 +21,9 @@
     }
   },
   "ui_font_size": 20,
-  // "ui_font_family": "Ubuntu Sans Mono",
+  "ui_font_family": "Inter",
   "buffer_font_size": 25,
   "buffer_font_family": "Iosevka Nerd Font",
-  "theme": "Dayfox - opaque",
   "format_on_save": "off",
   "soft_wrap": "editor_width",
   "project_panel": {
@@ -57,9 +56,13 @@
     "lua": true,
     "macos-classic": true,
     "material-icon-theme": true,
+    "alabaster": true,
+    "ini": true,
+    "toml": true,
     "catppuccin": true,
     "nvim-nightfox": true,
     "php": true,
+    "react-typescript-snippets": true,
     "snippets": true,
     "sql": true
   }
