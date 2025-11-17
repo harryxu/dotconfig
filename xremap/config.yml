@@ -1,11 +1,19 @@
 keymap:
-  - name: "Global Remaps"
+  - name: Terminal Overrides
+    application:
+      only: kitty
     remap:
-      "M-x": "C-x"
-      "M-c": "C-c"
-      "M-v": "C-v"
-      "M-a": "C-a"
-      "M-f": "C-f"
-      "M-r": "C-r"
-      "M-z": "C-z"
-      "M-s": "C-s"
+      Alt-c: C-right
+      Ctrl-f: C-right
+      Alt-v: Alt-v
+
+  - name: Global Remaps
+    remap:
+      Alt-x: C-x
+      Alt-c: C-c
+      Alt-v: C-v
+      Alt-a: C-a
+      Alt-f: C-f
+      Alt-r: C-r
+      Alt-z: C-z
+      Alt-s: C-s
