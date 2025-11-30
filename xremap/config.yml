@@ -1,0 +1,32 @@
+keymap:
+  - name: Terminal Overrides
+    application:
+      only:
+        - kitty
+        - com.mitchellh.ghostty
+    remap:
+      Alt-c: Alt-c
+      Alt-v: Alt-v
+
+  - name: Web browser Overrides
+    application:
+      only:
+        - google-chrome
+        - firefox
+    remap:
+      Alt-l: C-l
+      Alt-t: C-t
+      Alt-w: C-w
+
+  - name: Global Remaps
+    remap:
+      Ctrl-Alt-a: Ctrl-Alt-a # Restore Ctrl-Alt-a, prevent overrided by Alt-a remap
+
+      Alt-x: C-x
+      Alt-c: C-c
+      Alt-v: C-v
+      Alt-a: C-a
+      Alt-f: C-f
+      Alt-r: C-r
+      Alt-z: C-z
+      Alt-s: C-s
