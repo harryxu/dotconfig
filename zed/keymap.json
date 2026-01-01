@@ -3,6 +3,7 @@
     "context": "Editor",
     "bindings": {
       "cmd-1": "pane::RevealInProjectPanel",
+      "alt-1": "pane::RevealInProjectPanel",
       "ctrl-c": "editor::Copy",
       "ctrl-v": "editor::Paste"
     }
