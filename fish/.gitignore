@@ -3,3 +3,4 @@ fish_variables
 completions/docker.fish
 completions/kubectl.fish
 completions/orbctl.fish
+.DS_Store
