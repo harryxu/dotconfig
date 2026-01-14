@@ -64,6 +64,7 @@
     "php": true,
     "react-typescript-snippets": true,
     "snippets": true,
-    "sql": true
+    "sql": true,
+    "less":true
   }
 }

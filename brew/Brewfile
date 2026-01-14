@@ -1,3 +1,6 @@
+# brew tap homebrew/bundle
+# brew bundle --file ./Brewfile
+
 tap "cloudflare/cloudflare"
 tap "homebrew/bundle"
 tap "jakehilborn/jakehilborn"
