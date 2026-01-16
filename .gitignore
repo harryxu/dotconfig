@@ -68,5 +68,4 @@ hypr/custom.conf
 !xremap/config.yml
 
 # KDE Config
-!kglobalshortcutsrc
 !dolphinrc
