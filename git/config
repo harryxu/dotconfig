@@ -32,3 +32,4 @@
 [core]
   editor = nvim
   autocrlf = false
+  eol = lf
