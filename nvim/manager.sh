@@ -25,6 +25,8 @@ Commands:
   disable <plugin>  Disable a plugin by removing lua/plugins/<plugin>.lua
   disable --all     Disable all plugins that match files in lua/plugins-available/
   list              List all available plugins in lua/plugins-available/
+  mini              Enter mini mode (create mini.mode flag file, Neovim skips plugins)
+  unmini            Exit mini mode (remove mini.mode flag file)
 
 Examples:
   $(basename "$0") enable mason
@@ -32,6 +34,8 @@ Examples:
   $(basename "$0") disable mason
   $(basename "$0") disable --all
   $(basename "$0") list
+  $(basename "$0") mini
+  $(basename "$0") unmini
 EOF
 }
 
@@ -124,6 +128,29 @@ cmd_disable() {
 }
 
 # ---------------------------------------------------------------------------
+# Command: mini / unmini
+# ---------------------------------------------------------------------------
+cmd_mini() {
+    local flag="${SCRIPT_DIR}/mini.mode"
+    if [[ -f "$flag" ]]; then
+        echo "Already in mini mode (${flag} exists)."
+    else
+        touch "${flag}"
+        echo "Mini mode enabled. Restart Neovim to take effect."
+    fi
+}
+
+cmd_unmini() {
+    local flag="${SCRIPT_DIR}/mini.mode"
+    if [[ ! -f "$flag" ]]; then
+        echo "Not in mini mode (${flag} does not exist)."
+    else
+        rm "${flag}"
+        echo "Mini mode disabled. Restart Neovim to take effect."
+    fi
+}
+
+# ---------------------------------------------------------------------------
 # Command: list
 # ---------------------------------------------------------------------------
 cmd_list() {
@@ -183,6 +210,12 @@ case "$COMMAND" in
         ;;
     list)
         cmd_list
+        ;;
+    mini)
+        cmd_mini
+        ;;
+    unmini)
+        cmd_unmini
         ;;
     help|--help|-h)
         usage
