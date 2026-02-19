@@ -8,3 +8,4 @@ mason.lua
 project.lua
 term.lua
 cmp.lua
+ufo.lua
