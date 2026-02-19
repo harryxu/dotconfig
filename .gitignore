@@ -1,5 +1,8 @@
 *
 
+!install.sh
+!readme.md
+
 !.gitignore
 !starship.toml
 !nvim
@@ -68,5 +71,4 @@ hypr/custom.conf
 !xremap/config.yml
 
 # KDE Config
-!kglobalshortcutsrc
 !dolphinrc

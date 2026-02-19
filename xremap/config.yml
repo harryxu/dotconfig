@@ -20,7 +20,10 @@ keymap:
 
   - name: Global Remaps
     remap:
-      Ctrl-Alt-a: Ctrl-Alt-a # Restore Ctrl-Alt-a, prevent overrided by Alt-a remap
+      Ctrl-Alt-a:
+        launch:
+          - "flameshot"
+          - "gui"
 
       Alt-x: C-x
       Alt-c: C-c
