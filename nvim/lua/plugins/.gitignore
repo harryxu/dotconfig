@@ -9,3 +9,5 @@ project.lua
 term.lua
 cmp.lua
 ufo.lua
+lualine.lua
+telescope.lua
