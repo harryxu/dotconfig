@@ -1,0 +1,9 @@
+ai.lua
+auto-session.lua
+colorizer.lua
+formatting.lua
+lsp.lua
+luasnip.lua
+mason.lua
+project.lua
+term.lua
