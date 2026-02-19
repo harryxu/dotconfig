@@ -2,7 +2,6 @@ return {
   "rebelot/heirline.nvim",
   event = "UiEnter",
   dependencies = {
-    "neovim/nvim-lspconfig",
     "nvim-tree/nvim-web-devicons", -- optional, but recommended
   },
   config = function()
