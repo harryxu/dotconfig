@@ -35,3 +35,5 @@ doc/tags*
 eclim/
 plugin/eclim.vim
 /addons/*/archive
+
+lazy-lock.json
