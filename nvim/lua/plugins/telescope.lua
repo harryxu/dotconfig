@@ -1,1 +1,0 @@
-/Users/harry/.config/nvim/lua/plugins-available/telescope.lua
