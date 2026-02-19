@@ -1,12 +1,8 @@
 # harry's dotconfig
 
-## Install
+## Installation
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/harryxu/dotconfig/refs/heads/main/install.sh)
-```
-
-```sh
-bash <(wget -qO- https://raw.githubusercontent.com/harryxu/dotconfig/refs/heads/main/install.sh)
+curl -s https://raw.githubusercontent.com/harryxu/dotconfig/refs/heads/main/install.sh -o /tmp/dotconfig_install.sh && bash /tmp/dotconfig_install.sh
 ```
 
