@@ -55,7 +55,7 @@ cmd_enable() {
             else
                 ln -s "${src}" "${dst}"
                 echo "[enabled] ${filename}"
-                ((count++))
+                count=$((count + 1))
             fi
         done
         echo ""
@@ -101,7 +101,7 @@ cmd_disable() {
             if [[ -e "$dst" || -L "$dst" ]]; then
                 rm "${dst}"
                 echo "[disabled] ${filename}"
-                ((count++))
+                count=$((count + 1))
             else
                 echo "[skip]     ${filename} (not enabled)"
             fi
@@ -145,7 +145,7 @@ cmd_list() {
             status="disabled"
         fi
         printf "  %-30s [%s]\n" "${plugin_name}" "${status}"
-        ((found++))
+        found=$((found + 1))
     done
     echo ""
     echo "Total: ${found} plugin(s)"
