@@ -21,6 +21,27 @@ if [ ! -d "$HOME/.config" ]; then
     mkdir -p "$HOME/.config"
 fi
 
+# Check if curl is installed
+if ! command -v curl &>/dev/null; then
+    echo "Error: curl is not installed. Please install curl and try again."
+    echo ""
+    echo "  macOS:         brew install curl"
+    echo "  Ubuntu/Debian: sudo apt install curl"
+    echo "  Fedora/RHEL:   sudo dnf install curl"
+    echo "  Arch:          sudo pacman -S curl"
+    echo ""
+    exit 1
+fi
+
+# Check if starship is installed, install it if not
+if ! command -v starship &>/dev/null; then
+    echo "starship not found. Installing starship (https://starship.rs/) ..."
+    curl -sS https://starship.rs/install.sh | sh
+    echo "starship installed successfully."
+else
+    echo "starship is already installed, skipping."
+fi
+
 # ---- Clone / Setup Repository ----
 
 if [ ! -d "$HOME/.config/.git" ]; then
