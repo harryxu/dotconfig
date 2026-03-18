@@ -70,5 +70,5 @@ hypr/custom.conf
 !xremap/
 !xremap/config.yml
 
-# KDE Config
-!dolphinrc
+!zellij/
+!zellij/config.kdl

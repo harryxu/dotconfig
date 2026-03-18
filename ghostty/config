@@ -13,7 +13,7 @@ shell-integration-features = no-cursor
 
 window-padding-x = 10
 
-config-file = ?custom-config
+macos-option-as-alt = true
 
 # bind `cmd s` to `ctrl s`
 # https://github.com/ghostty-org/ghostty/discussions/3493?utm_source=chatgpt.com#discussioncomment-11685022
@@ -24,3 +24,5 @@ keybind = alt+shift+[=previous_tab
 keybind = alt+w=close_tab
 keybind = alt+c=copy_to_clipboard
 keybind = alt+v=paste_from_clipboard
+
+config-file = ?custom-config
