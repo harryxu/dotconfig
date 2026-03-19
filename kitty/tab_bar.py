@@ -47,8 +47,12 @@ def draw_tab(
         screen.draw(" ▐█")
     elif extra_data.prev_tab is None or extra_data.prev_tab.tab_id != active_id:
         screen.cursor.bg = as_rgb(int(draw_data.inactive_bg))
-        screen.cursor.fg = as_rgb(int(0x626880))
-        screen.draw(" │ ")
+        if index > 1:
+            screen.cursor.fg = as_rgb(int(0x626880))
+            screen.draw(" │ ")
+        else:
+            # screen.cursor.fg = as_rgb(draw_data.active_bg)
+            screen.draw("   ")
 
     screen.cursor.fg = old_fg
     screen.cursor.bg = old_bg
