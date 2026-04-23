@@ -7,20 +7,51 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "icon_theme": "Material Icon Theme",
-  "features": {
-    "edit_prediction_provider": "zed"
+  "collaboration_panel": {
+    "dock": "left"
   },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_buffer_font_size": 21.0,
+  "agent_ui_font_size": 21.0,
+  "theme": "macOS Classic Light",
+  "ssh_connections": [
+    {
+      "host": "192.168.19.233",
+      "username": "harry",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/harry"],
+        },
+      ],
+    },
+  ],
+  "edit_predictions": {
+    "provider": "zed",
+  },
+  "icon_theme": "Material Icon Theme",
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "agent": {
+    "dock": "right",
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    }
+      "model": "claude-sonnet-4-6",
+    },
   },
-  "ui_font_size": 20,
+  "ui_font_size": 21.0,
   "ui_font_family": "Inter",
   "buffer_font_size": 25,
   "buffer_font_family": "Iosevka Nerd Font",
@@ -28,20 +59,23 @@
   "soft_wrap": "editor_width",
   "project_panel": {
     "dock": "left",
-    "auto_reveal_entries": false
+    "auto_reveal_entries": false,
+    "hide_hidden": false,
+    "hide_gitignore": false,
   },
+  "file_scan_inclusions": ["node_modules", "**/node_modules"],
   "languages": {
-    "JSON": { "format_on_save": "on" }
+    "JSON": { "format_on_save": "on" },
   },
   "git": {
     "inline_blame": {
-      "enabled": false
-    }
+      "enabled": false,
+    },
   },
 
   "vim_mode": true,
   "vim": {
-    "use_system_clipboard": "never"
+    "use_system_clipboard": "never",
   },
 
   "auto_install_extensions": {
@@ -65,6 +99,6 @@
     "react-typescript-snippets": true,
     "snippets": true,
     "sql": true,
-    "less":true
-  }
+    "less": true,
+  },
 }
