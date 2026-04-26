@@ -55,4 +55,11 @@ vim.opt.completeopt = "longest,menuone"
 vim.opt.splitbelow = true
 vim.opt.pumblend = 0
 
+vim.opt.guicursor = {
+  "n-v-c:block",
+  "i-ci-ve:ver25",
+  "r-cr:hor20",
+  "o:hor50",
+}
+
 vim.o.guifont = "Iosevka NFM:h21"
