@@ -28,6 +28,7 @@ keymap:
       Shift-Alt-v:
         launch:
           - "bash"
+          - "-c"
           - "~/.config/rofi/cliphist.sh"
 
       Alt-x: C-x
