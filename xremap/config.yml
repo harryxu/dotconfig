@@ -25,6 +25,11 @@ keymap:
           - "flameshot"
           - "gui"
 
+      Shift-Alt-v:
+        launch:
+          - "bash"
+          - "~/.config/rofi/cliphist.sh"
+
       Alt-x: C-x
       Alt-c: C-c
       Alt-v: C-v

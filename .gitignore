@@ -75,3 +75,4 @@ hypr/custom.conf
 
 !rofi/
 !rofi/*
+!rofi/**/*
