@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rofi_theme="~/.config/rofi/themes/rounded-nord-dark.rasi"
+
 # Get cliphist history
 cliphist_output=$(cliphist list)
 
@@ -12,9 +14,9 @@ custom_commands["	> Compact"]="cliphist compact"
 # Define submenu actions as associative array
 # Key: display text, Value: action type (for special handling in main loop)
 declare -A submenu_actions
-submenu_actions["Copy"]="copy"
-submenu_actions["Copy and Delete"]="copy_and_delete"
-submenu_actions["Delete"]="delete"
+submenu_actions["	> Copy"]="copy"
+submenu_actions["	> Copy and Delete"]="copy_and_delete"
+submenu_actions["	> Delete"]="delete"
 
 # Function to check if item is custom command
 is_custom_command() {
@@ -40,7 +42,7 @@ show_main_menu() {
         -i \
         -display-columns 2 \
         -p "cliphist" \
-        -theme ~/.config/rofi/themes/rounded-nord-dark.rasi \
+        -theme "$rofi_theme" \
         -me-select-entry '' \
         -me-accept-entry MousePrimary \
         -hover-select \
@@ -67,8 +69,9 @@ show_submenu() {
     echo "$options" | rofi \
         -dmenu \
         -i \
+        -display-columns 2 \
         -p "cliphist" \
-        -theme ~/.config/rofi/themes/rounded-nord-dark.rasi \
+        -theme "$rofi_theme" \
         -me-select-entry '' \
         -me-accept-entry MousePrimary \
         -hover-select
