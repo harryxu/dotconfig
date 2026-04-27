@@ -76,3 +76,6 @@ hypr/custom.conf
 !rofi/
 !rofi/*
 !rofi/**/*
+
+!cliphist/
+!cliphist/config

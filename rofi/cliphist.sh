@@ -6,8 +6,8 @@ cliphist_output=$(cliphist list)
 # Define custom commands as associative array
 # Key: display text, Value: command to execute
 declare -A custom_commands
-custom_commands["> Wipe"]="cliphist wipe"
-custom_commands["> Compact"]="cliphist compact"
+custom_commands["	> Wipe"]="cliphist wipe"
+custom_commands["	> Compact"]="cliphist compact"
 
 # Combine history with custom operations
 options="$cliphist_output"
@@ -16,7 +16,15 @@ for cmd_display in "${!custom_commands[@]}"; do
 done
 
 # Display options through rofi and get user selection
-selected=$(echo "$options" | rofi -dmenu -i -p "cliphist" -theme ~/.config/rofi/themes/rounded-nord-dark.rasi -me-select-entry ''  -me-accept-entry MousePrimary -hover-select)
+selected=$(echo "$options" | rofi \
+    -dmenu \
+    -i \
+    -display-columns 2 \
+    -p "cliphist" \
+    -theme ~/.config/rofi/themes/rounded-nord-dark.rasi \
+    -me-select-entry '' \
+    -me-accept-entry MousePrimary \
+    -hover-select)
 
 # If user cancels selection (press Esc or close window)
 if [ -z "$selected" ]; then
