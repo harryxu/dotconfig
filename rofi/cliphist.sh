@@ -5,36 +5,71 @@ rofi_theme="~/.config/rofi/themes/rounded-nord-dark.rasi"
 # Get cliphist history
 cliphist_output=$(cliphist list)
 
-# Define custom commands as associative array
-# Key: display text, Value: command to execute
-declare -A custom_commands
-custom_commands["	> Wipe"]="cliphist wipe"
-custom_commands["	> Compact"]="cliphist compact"
+# Define custom commands as indexed array
+# Format: "display_text,command"
+custom_commands=(
+    "	> Wipe,cliphist wipe"
+    "	> Compact,cliphist compact"
+)
 
-# Define submenu actions as associative array
-# Key: display text, Value: action type (for special handling in main loop)
-declare -A submenu_actions
-submenu_actions["	> Copy"]="copy"
-submenu_actions["	> Copy and Delete"]="copy_and_delete"
-submenu_actions["	> Delete"]="delete"
+# Define submenu actions as indexed array
+# Format: "display_text,action_type"
+submenu_actions=(
+    "	> Copy,copy"
+    "	> Copy and Delete,copy_and_delete"
+    "	> Delete,delete"
+)
 
 # Function to check if item is custom command
 is_custom_command() {
     local item="$1"
-    [[ -v custom_commands["$item"] ]]
+    for cmd_entry in "${custom_commands[@]}"; do
+        local display="${cmd_entry%,*}"
+        if [ "$display" = "$item" ]; then
+            return 0
+        fi
+    done
+    return 1
 }
 
-# Function to check if item is submenu action
+# Function to get value from array entry (display_text,value format)
+get_value() {
+    local item="$1"
+    local array_name="$2"
+    
+    # Use nameref to reference the array
+    local -n array_ref="$array_name"
+    
+    for entry in "${array_ref[@]}"; do
+        local display="${entry%,*}"
+        local value="${entry#*,}"
+        if [ "$display" = "$item" ]; then
+            echo "$value"
+            return
+        fi
+    done
+}
+
+# Function to check if item is submenu action and extract action type
 is_submenu_action() {
     local item="$1"
-    [[ -v submenu_actions["$item"] ]]
+    for action_entry in "${submenu_actions[@]}"; do
+        local display="${action_entry%,*}"
+        if [ "$display" = "$item" ]; then
+            return 0
+        fi
+    done
+    return 1
 }
+
+
 
 # Function to show main menu
 show_main_menu() {
     local options="$cliphist_output"
-    for cmd_display in "${!custom_commands[@]}"; do
-        options=$(printf "%s\n%s" "$options" "$cmd_display")
+    for cmd_entry in "${custom_commands[@]}"; do
+        local display="${cmd_entry%,*}"
+        options=$(printf "%s\n%s" "$options" "$display")
     done
 
     local MESG="""<span size=\"x-small\">Alt + Enter for more actions.</span>"""
@@ -59,14 +94,16 @@ show_submenu() {
     local selected="$1"
     local options="$selected"
 
-    # Add submenu actions to submenu
-    for action_display in "${!submenu_actions[@]}"; do
-        options=$(printf "%s\n%s" "$options" "$action_display")
+    # Add submenu actions to submenu (in defined order)
+    for action_entry in "${submenu_actions[@]}"; do
+        local display="${action_entry%,*}"
+        options=$(printf "%s\n%s" "$options" "$display")
     done
 
     # Add custom commands to submenu
-    for cmd_display in "${!custom_commands[@]}"; do
-        options=$(printf "%s\n%s" "$options" "$cmd_display")
+    for cmd_entry in "${custom_commands[@]}"; do
+        local display="${cmd_entry%,*}"
+        options=$(printf "%s\n%s" "$options" "$display")
     done
 
     echo "$options" | rofi \
@@ -94,7 +131,7 @@ while true; do
 
     # Check if selected item is a custom command
     if is_custom_command "$selected"; then
-        eval "${custom_commands[$selected]}"
+        eval "$(get_value "$selected" custom_commands)"
         exit 0
     fi
 
@@ -110,7 +147,7 @@ while true; do
 
         # Check if submenu choice is a custom command
         if is_custom_command "$submenu_choice"; then
-            eval "${custom_commands[$submenu_choice]}"
+            eval "$(get_value "$submenu_choice" custom_commands)"
             exit 0
         fi
 
@@ -119,7 +156,7 @@ while true; do
             # Copy selected item to clipboard
             echo "$selected" | cliphist decode | wl-copy
         elif is_submenu_action "$submenu_choice"; then
-            action="${submenu_actions[$submenu_choice]}"
+            action=$(get_value "$submenu_choice" submenu_actions)
 
             case "$action" in
                 copy)
