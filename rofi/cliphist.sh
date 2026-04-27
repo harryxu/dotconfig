@@ -1,25 +1,32 @@
 #!/bin/bash
 
-# 获取cliphist历史记录
+# Get cliphist history
 cliphist_output=$(cliphist list)
 
-# 将历史记录和自定义操作组合
-options=$(printf "%s\n> Wipe\n❯ Compact" "$cliphist_output")
+# Define custom commands as associative array
+# Key: display text, Value: command to execute
+declare -A custom_commands
+custom_commands["> Wipe"]="cliphist wipe"
+custom_commands["> Compact"]="cliphist compact"
 
-# 通过rofi显示选项并获取用户选择
+# Combine history with custom operations
+options="$cliphist_output"
+for cmd_display in "${!custom_commands[@]}"; do
+    options=$(printf "%s\n%s" "$options" "$cmd_display")
+done
+
+# Display options through rofi and get user selection
 selected=$(echo "$options" | rofi -dmenu -i -p "cliphist" -theme ~/.config/rofi/themes/rounded-nord-dark.rasi -me-select-entry ''  -me-accept-entry MousePrimary -hover-select)
 
-# 如果用户取消选择（按Esc或关闭窗口）
+# If user cancels selection (press Esc or close window)
 if [ -z "$selected" ]; then
     exit 0
 fi
 
-# 根据选择执行相应操作
-if [ "$selected" = "Wipe" ]; then
-    cliphist wipe
-elif [ "$selected" = "Compact" ]; then
-    cliphist compact
+# Check if selected item is a custom command
+if [[ -v custom_commands["$selected"] ]]; then
+    eval "${custom_commands[$selected]}"
 else
-    # 处理历史项选择：decode后复制到剪贴板
+    # Handle history item selection: decode and copy to clipboard
     echo "$selected" | cliphist decode | wl-copy
 fi
