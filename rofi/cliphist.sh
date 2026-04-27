@@ -37,11 +37,14 @@ show_main_menu() {
         options=$(printf "%s\n%s" "$options" "$cmd_display")
     done
 
+    local MESG="""<span size=\"x-small\">Alt + Enter for more actions.</span>"""
+
     echo "$options" | rofi \
         -dmenu \
         -i \
         -display-columns 2 \
         -p "cliphist" \
+        -mesg "$MESG" \
         -theme "$rofi_theme" \
         -me-select-entry '' \
         -me-accept-entry MousePrimary \
