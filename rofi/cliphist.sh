@@ -36,10 +36,10 @@ is_custom_command() {
 get_value() {
     local item="$1"
     local array_name="$2"
-    
+
     # Use nameref to reference the array
     local -n array_ref="$array_name"
-    
+
     for entry in "${array_ref[@]}"; do
         local display="${entry%,*}"
         local value="${entry#*,}"
@@ -163,8 +163,10 @@ while true; do
                     echo "$selected" | cliphist decode | wl-copy
                     ;;
                 copy_and_delete)
+                    # First copy to clipboard
                     echo "$selected" | cliphist decode | wl-copy
-                    echo "$selected" | cliphist delete
+                    # Then delete from history using delete-query
+                    echo "$selected" | awk '{print $2}' | xargs cliphist delete-query
                     ;;
                 delete)
                     echo "$selected" | cliphist delete
