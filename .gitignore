@@ -72,3 +72,10 @@ hypr/custom.conf
 
 !zellij/
 !zellij/config.kdl
+
+!rofi/
+!rofi/*
+!rofi/**/*
+
+!cliphist/
+!cliphist/config
