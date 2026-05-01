@@ -34,6 +34,7 @@ tmux/plugins
 !zed/
 !zed/settings.json
 !zed/keymap.json
+!zed/ext.sh
 
 !kitty
 !kitty/*
