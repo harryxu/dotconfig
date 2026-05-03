@@ -1,1 +1,5 @@
 *
+!.gitignore
+!colorscheme.lua
+!disabled.lua
+!lazyvim.lua
