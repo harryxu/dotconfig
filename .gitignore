@@ -60,13 +60,8 @@ hypr/custom.conf
 !waybar/
 !waybar/*
 
-!wofi/
-!wofi/*
-
 !swaync/
 !swaync/*
-
-!keyd/app.conf
 
 !xremap/
 !xremap/config.yml
