@@ -5,7 +5,13 @@
       "cmd-1": "pane::RevealInProjectPanel",
       "alt-1": "pane::RevealInProjectPanel",
       "ctrl-c": "editor::Copy",
-      "ctrl-v": "editor::Paste"
+      "ctrl-v": "editor::Paste",
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-j": "terminal_panel::Toggle"
     }
   },
   {
