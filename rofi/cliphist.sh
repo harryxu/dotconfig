@@ -33,7 +33,7 @@ is_custom_command() {
 }
 
 # Function to get value from array entry (display_text,value format)
-get_value() {
+entry_value() {
     local item="$1"
     local array_name="$2"
 
@@ -131,7 +131,7 @@ while true; do
 
     # Check if selected item is a custom command
     if is_custom_command "$selected"; then
-        eval "$(get_value "$selected" custom_commands)"
+        eval "$(entry_value "$selected" custom_commands)"
         exit 0
     fi
 
@@ -147,7 +147,7 @@ while true; do
 
         # Check if submenu choice is a custom command
         if is_custom_command "$submenu_choice"; then
-            eval "$(get_value "$submenu_choice" custom_commands)"
+            eval "$(entry_value "$submenu_choice" custom_commands)"
             exit 0
         fi
 
@@ -156,7 +156,7 @@ while true; do
             # Copy selected item to clipboard
             echo "$selected" | cliphist decode | wl-copy
         elif is_submenu_action "$submenu_choice"; then
-            action=$(get_value "$submenu_choice" submenu_actions)
+            action=$(entry_value "$submenu_choice" submenu_actions)
 
             case "$action" in
                 copy)
