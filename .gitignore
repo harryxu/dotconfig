@@ -1,5 +1,9 @@
 *
 
+!.agents/
+!.agents/*
+!.agents/**/*
+
 !install.sh
 !readme.md
 
