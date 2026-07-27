@@ -75,3 +75,6 @@ hypr/custom.conf
 
 !cliphist/
 !cliphist/config
+
+!herdr/
+!herdr/config.toml
