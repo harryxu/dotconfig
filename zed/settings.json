@@ -1,55 +1,39 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
+// Documentation: https://zed.dev/docs/configuring-zed.
+// Run the `open default settings` command to see default settings.
 {
+  "tab_size": 2,
   "cli_default_open_behavior": "new_window",
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "left"
   },
   "git_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "agent_buffer_font_size": 21.0,
   "agent_ui_font_size": 21.0,
   "theme": "macOS Classic Light",
-  "ssh_connections": [
-    {
-      "host": "192.168.19.233",
-      "username": "harry",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/harry"],
-        },
-      ],
-    },
-  ],
   "edit_predictions": {
-    "provider": "zed",
+    "provider": "zed"
   },
   "icon_theme": "Material Icon Theme",
   "outline_panel": {
-    "dock": "right",
+    "dock": "right"
   },
   "agent": {
     "dock": "right",
     "tool_permissions": {
       "tools": {
         "terminal": {
-          "default": "allow",
-        },
-      },
+          "default": "allow"
+        }
+      }
     },
     "default_model": {
+      "effort": "medium",
       "enable_thinking": true,
-      "provider": "copilot_chat",
-      "model": "claude-haiku-4.5",
-    },
+      "provider": "google",
+      "model": "gemini-3.5-flash"
+    }
   },
   "ui_font_size": 21.0,
   "ui_font_family": "Inter",
@@ -61,21 +45,21 @@
     "dock": "left",
     "auto_reveal_entries": false,
     "hide_hidden": false,
-    "hide_gitignore": false,
+    "hide_gitignore": false
   },
   "file_scan_inclusions": ["node_modules", "**/node_modules"],
   "languages": {
-    "JSON": { "format_on_save": "on" },
+    "JSON": { "format_on_save": "on" }
   },
   "git": {
     "inline_blame": {
-      "enabled": false,
-    },
+      "enabled": false
+    }
   },
 
   "vim_mode": true,
   "vim": {
-    "use_system_clipboard": "never",
+    "use_system_clipboard": "never"
   },
 
   "auto_install_extensions": {
@@ -105,6 +89,6 @@
     "scss": true,
     "snippets": true,
     "sql": true,
-    "toml": true,
-  },
+    "toml": true
+  }
 }
