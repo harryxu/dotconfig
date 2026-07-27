@@ -1,5 +1,6 @@
 [keys]
 prefix = "ctrl+e"
+new_tab = "prefix+t"
 
 [ui.sound]
 enabled = false
