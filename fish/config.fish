@@ -29,9 +29,13 @@ end
 # Bind fzf completions to ctrl-x
 set -U fifc_keybinding \cn
 
-
 if test "$TERM_PROGRAM" = ghostty -o "$TERM_PROGRAM" = xterm-kitty
     set -x TERM xterm-256color
+end
+
+# mise activate
+if type -q mise
+    mise activate fish | source
 end
 
 starship init fish | source
