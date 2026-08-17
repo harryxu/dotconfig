@@ -82,3 +82,6 @@ hypr/custom.conf
 
 !herdr/
 !herdr/config.toml
+
+!scripts/
+!scripts/*
