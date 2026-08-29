@@ -62,4 +62,4 @@ vim.opt.guicursor = {
   "o:hor50",
 }
 
-vim.o.guifont = "Iosevka NFM:h21"
+vim.o.guifont = "Iosevka Nerd Font Mono:h25"
