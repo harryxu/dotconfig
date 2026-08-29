@@ -29,6 +29,13 @@ return {
           fallback()
         end
       end, { "c" }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.confirm({ select = true })
+        else
+          fallback()
+        end
+      end, { "c" }),
     })
 
     -- Use buffer source for `/` and `?`
