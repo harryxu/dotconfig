@@ -6,6 +6,7 @@ return {
   keys = {
     { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+    { "<leader>?", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
     { "<leader><space>", LazyVim.pick("find_files"), desc = "Find Files (Root Dir)" },
     { "<leader>ff", LazyVim.pick("find_files"), desc = "Find Files (Root Dir)" },
     { "<leader>fF", LazyVim.pick("find_files", { root = false }), desc = "Find Files (cwd)" },
