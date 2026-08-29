@@ -14,10 +14,26 @@ return {
   },
   opts = function(_, opts)
     local cmp = require("cmp")
+    local cmdline_mapping = cmp.mapping.preset.cmdline({
+      ["<Down>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end, { "c" }),
+      ["<Up>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          fallback()
+        end
+      end, { "c" }),
+    })
 
     -- Use buffer source for `/` and `?`
     cmp.setup.cmdline({ "/", "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
+      mapping = cmdline_mapping,
       completion = { completeopt = "menu,menuone,noselect" },
       sources = {
         { name = "buffer" },
@@ -28,7 +44,7 @@ return {
     cmp.setup.cmdline(":", {
       enabled = true,
       completion = { completeopt = "menu,menuone,noselect" },
-      mapping = cmp.mapping.preset.cmdline(),
+      mapping = cmdline_mapping,
       sources = cmp.config.sources({
         { name = "path" },
       }, {
