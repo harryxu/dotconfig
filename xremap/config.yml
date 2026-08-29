@@ -1,3 +1,12 @@
+# Key remapper for X11 and Wayland
+# Configuration options:
+# https://github.com/xremap/xremap/blob/master/doc/reference_config_options.md
+#
+# Restart service:
+#   systemctl --user restart xremap
+# Check service status:
+#   systemctl --user status xremap
+
 keymap:
   - name: Terminal Overrides
     application:
@@ -39,3 +48,4 @@ keymap:
       Alt-r: C-r
       Alt-z: C-z
       Alt-s: C-s
+      Alt-q: Alt-F4
