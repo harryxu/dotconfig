@@ -9,8 +9,7 @@ return {
     { "<leader><space>", LazyVim.pick("find_files"), desc = "Find Files (Root Dir)" },
     { "<leader>ff", LazyVim.pick("find_files"), desc = "Find Files (Root Dir)" },
     { "<leader>fF", LazyVim.pick("find_files", { root = false }), desc = "Find Files (cwd)" },
-    -- { "<C-p>", "<cmd>Telescope git_files previewer=false<cr>", desc = "Find Files (git-files)" },
-    -- { "<D-p>", "<cmd>Telescope git_files previewer=false<cr>", desc = "Find Files (git-files)" },
+    { "<C-p>", LazyVim.pick("find_files"), desc = "Find Files (Root Dir)" },
   },
 
   opts = function(_, opts)
