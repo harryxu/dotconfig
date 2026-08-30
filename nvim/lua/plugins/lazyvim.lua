@@ -36,6 +36,25 @@ return {
             height = "auto",
           },
         },
+        mini = {
+          timeout = 5000, -- extend mini view timeout to 5s (default: 2000ms)
+          win_options = {
+            wrap = true,
+            linebreak = true,
+          },
+        },
+        popup = {
+          win_options = {
+            wrap = true,
+            linebreak = true,
+          },
+        },
+        hover = {
+          win_options = {
+            wrap = true,
+            linebreak = true,
+          },
+        },
       },
       lsp = {
         progress = {
