@@ -8,6 +8,9 @@ return {
   },
   lazy = false, -- neo-tree will lazily load itself
   opts = {
+    window = {
+      width = 28, -- default width
+    },
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = false },
