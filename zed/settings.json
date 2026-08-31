@@ -1,6 +1,62 @@
 // Documentation: https://zed.dev/docs/configuring-zed.
 // Run the `open default settings` command to see default settings.
 {
+  "ssh_connections": [
+    {
+      "host": "192.168.19.171",
+      "username": "harry",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/harry/.openclaw"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "192.168.19.236",
+      "username": "harry",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/harry"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "192.168.19.236",
+      "username": "harry",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "192.168.19.231",
+      "username": "harry",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/harry"
+          ]
+        }
+      ]
+    }
+  ],
+  "context_servers": {
+    "antd": {
+      "enabled": true,
+      "remote": false,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@ant-design/cli",
+        "mcp"
+      ]
+    }
+  },
   "tab_size": 2,
   "cli_default_open_behavior": "new_window",
   "collaboration_panel": {
@@ -20,6 +76,26 @@
     "dock": "right"
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "deepseek",
+        "model": "deepseek-v4-flash",
+        "enable_thinking": false,
+        "effort": "high"
+      },
+      {
+        "provider": "deepseek",
+        "model": "deepseek-v4-pro",
+        "enable_thinking": false,
+        "effort": "high"
+      },
+      {
+        "provider": "google",
+        "model": "gemini-3.5-flash",
+        "enable_thinking": true,
+        "effort": "medium"
+      }
+    ],
     "dock": "right",
     "tool_permissions": {
       "tools": {
@@ -29,10 +105,10 @@
       }
     },
     "default_model": {
-      "effort": "medium",
-      "enable_thinking": true,
-      "provider": "google",
-      "model": "gemini-3.5-flash"
+      "effort": "high",
+      "enable_thinking": false,
+      "provider": "deepseek",
+      "model": "deepseek-v4-flash"
     }
   },
   "ui_font_size": 21.0,
