@@ -9,6 +9,7 @@ mini.mode
 *.so
 .DS_Store
 
+nvim.log
 
 !.gitignore
 !.gitmodules
