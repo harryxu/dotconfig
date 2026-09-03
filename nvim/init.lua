@@ -10,3 +10,8 @@ if vim.fn.filereadable(mini_mode_flag) == 1 then
 else
   require("config.lazy")
 end
+
+local local_config = vim.fn.stdpath("config") .. "/local.lua"
+if vim.fn.filereadable(local_config) == 1 then
+  dofile(local_config)
+end

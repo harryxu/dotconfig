@@ -1,6 +1,8 @@
 /plugged
 /autoload/plug.vim
 
+local.lua
+
 mini.mode
 
 *.swp
