@@ -1,0 +1,13 @@
+# Rime build artifacts and databases (in case any are accidentally created here)
+build/
+*.prism.bin
+*.userdb/
+*.table.bin
+*.reverse.bin
+installation.yaml
+user.yaml
+
+# Backups and temp files
+*.bak
+.DS_Store
+*.log

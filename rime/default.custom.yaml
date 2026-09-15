@@ -1,0 +1,31 @@
+# default.custom.yaml
+# 全局输入配置定制
+#
+# ==============================================================================
+# 【配置生效与重新部署说明】
+# ==============================================================================
+# 手动修改此配置文件后，必须重新部署才能使新配置生效。
+#
+# --- macOS (鼠须管 Squirrel) ---
+# 配置文件存放路径:
+#   ~/Library/Rime/
+# 应用配置方法:
+#   方法 1（推荐）: 点击顶部菜单栏的输入法图标，选择「重新部署」（Deploy）。
+#   方法 2（终端命令）: "/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel" --reload
+#
+# --- Linux (中州韵 / ibus-rime / fcitx-rime / fcitx5-rime) ---
+# 配置文件存放路径:
+#   - ibus-rime:   ~/.config/ibus/rime/
+#   - fcitx-rime:  ~/.config/fcitx/rime/
+#   - fcitx5-rime: ~/.local/share/fcitx5/rime/
+# 应用配置方法:
+#   - ibus-rime:
+#       方法 1: 点击输入法状态栏上的 ⟲ (Deploy) 部署按钮。
+#       方法 2（终端命令）: touch ~/.config/ibus/rime/ && ibus restart
+#   - fcitx / fcitx5:
+#       方法 1: 右键输入法托盘图标，点击「重新部署」（Deploy）。
+#       方法 2（终端命令）: rime_deployer --build ~/.local/share/fcitx5/rime (或重启输入法: fcitx5 -r -d)
+# ==============================================================================
+
+patch:
+  menu/page_size: 9  # 候选词数量改为 9 个

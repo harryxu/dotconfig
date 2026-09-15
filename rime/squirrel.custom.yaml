@@ -1,0 +1,12 @@
+# squirrel.custom.yaml
+# 鼠须管 (Squirrel) 界面外观定制
+#
+# 【配置生效说明】
+# 手动修改此配置文件后，需要执行“重新部署”以使配置生效：
+#   方法 1（推荐）：点击 macOS 顶部菜单栏的输入法图标，选择「重新部署」（Deploy）。
+#   方法 2（终端命令）：在终端执行：
+#       "/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel" --reload
+
+patch:
+  style/candidate_list_layout: linear  # 候选词横向排列 (linear 为横排，stacked 为竖排)
+  style/text_orientation: horizontal   # 文字水平方向

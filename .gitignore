@@ -85,3 +85,6 @@ hypr/custom.conf
 
 !scripts/
 !scripts/*
+
+!rime/
+!rime/*
