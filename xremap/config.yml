@@ -36,9 +36,13 @@ keymap:
 
       Shift-Alt-v:
         launch:
-          - "bash"
-          - "-c"
-          - "~/.config/rofi/cliphist.sh"
+          - "vicinae"
+          - "vicinae://launch/clipboard/history"
+
+      Alt-e:
+        launch:
+          - "vicinae"
+          - "toggle"
 
       Alt-x: C-x
       Alt-c: C-c
