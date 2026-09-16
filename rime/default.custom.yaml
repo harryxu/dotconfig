@@ -28,4 +28,6 @@
 # ==============================================================================
 
 patch:
+  # 这里的 rime_ice_suggestion 为雾凇方案的默认预设（通过 install.sh 已对齐 macOS 与 Linux）
+  __include: rime_ice_suggestion:/
   menu/page_size: 9  # 候选词数量改为 9 个
