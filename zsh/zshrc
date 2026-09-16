@@ -18,3 +18,8 @@ export PATH=$GEM_HOME/bin:$PATH
 if command -v mise >/dev/null 2>&1; then
   eval "$(mise activate zsh)"
 fi
+
+# Flutter SDK
+if [ -d "$HOME/dev/sdks/flutter/bin" ]; then
+  export PATH="$HOME/dev/sdks/flutter/bin:$PATH"
+fi

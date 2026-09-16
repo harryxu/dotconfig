@@ -8,6 +8,8 @@
 #       "/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel" --reload
 
 patch:
+  style/color_scheme: google
+  style/color_scheme_dark: solarized_dark
   style/candidate_list_layout: linear  # 候选词横向排列 (linear 为横排，stacked 为竖排)
   style/text_orientation: horizontal   # 文字水平方向
   style/font_point: 18                 # 候选词字体大小改为 18
