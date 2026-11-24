@@ -24,10 +24,6 @@ tmux/plugins
 !fish/*
 !fish/**/*
 
-!wezterm
-!wezterm/*
-!wezterm/**/*
-
 !kitty
 !kitty/*
 !kitty/**/*
