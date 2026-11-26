@@ -33,6 +33,7 @@ tmux/plugins
 
 !zed/
 !zed/apply_settings.py
+!zed/export_settings.py
 !zed/settings.shared.jsonc
 !zed/keymap.json
 !zed/ext.sh

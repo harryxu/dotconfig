@@ -89,16 +89,7 @@ def read_existing(path):
         return None
 
 
-def apply_settings(directory):
-    shared_bytes = (directory / "settings.shared.jsonc").read_bytes()
-    shared = decode_settings(jsonc_to_json(shared_bytes.decode("utf-8")))
-    destination = (directory / "settings.json").resolve()
-    original = read_existing(destination)
-    updated = shared_bytes if original is None else merge_settings(original.decode("utf-8"), shared).encode("utf-8")
-    if updated == original:
-        print("Zed shared settings are already up to date.")
-        return
-
+def write_settings(destination, original, updated):
     output = tempfile.NamedTemporaryFile(dir=destination.parent, delete=False)
     temporary = Path(output.name)
     try:
@@ -114,6 +105,19 @@ def apply_settings(directory):
     finally:
         if temporary.exists():
             temporary.unlink()
+
+
+def apply_settings(directory):
+    shared_bytes = (directory / "settings.shared.jsonc").read_bytes()
+    shared = decode_settings(jsonc_to_json(shared_bytes.decode("utf-8")))
+    destination = (directory / "settings.json").resolve()
+    original = read_existing(destination)
+    updated = shared_bytes if original is None else merge_settings(original.decode("utf-8"), shared).encode("utf-8")
+    if updated == original:
+        print("Zed shared settings are already up to date.")
+        return
+
+    write_settings(destination, original, updated)
     print("Applied shared Zed settings.")
 
 

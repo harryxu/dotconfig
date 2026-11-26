@@ -9,3 +9,7 @@ curl -s https://raw.githubusercontent.com/harryxu/dotconfig/refs/heads/main/inst
 The installer uses Python 3 to apply `zed/settings.shared.jsonc` to the local
 `~/.config/zed/settings.json`. To apply shared settings again after pulling an
 update, run `bash ~/.config/install.sh --zed-settings`.
+
+To export changes from Zed, run `~/.config/zed/export_settings.py`. It regenerates
+`settings.shared.jsonc` from the local settings, excluding the top-level keys in
+`LOCAL_ONLY_KEYS` in the script. Review the resulting Git diff before committing.
