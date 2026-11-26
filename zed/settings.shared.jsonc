@@ -9,7 +9,7 @@
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 21.0,
   "ui_font_family": "Inter",
-  "buffer_font_size": 25,
+  "buffer_font_size": 23,
   "buffer_font_family": "Iosevka Nerd Font",
   "format_on_save": "off",
   "soft_wrap": "editor_width",
