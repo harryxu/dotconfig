@@ -17,7 +17,7 @@ ensure_prek() {
         installer=$(mktemp)
         trap 'rm -f "$installer"' EXIT
         curl --proto '=https' --tlsv1.2 -fsSL \
-            https://github.com/j178/prek/releases/download/v0.5.12/prek-installer.sh \
+            https://github.com/j178/prek/releases/latest/download/prek-installer.sh \
             -o "$installer"
         PREK_INSTALL_DIR="$HOME/.local/bin" PREK_NO_MODIFY_PATH=1 sh "$installer"
     )
