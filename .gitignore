@@ -5,6 +5,7 @@
 !.agents/**/*
 
 !install.sh
+!prek.toml
 !readme.md
 
 !.gitignore

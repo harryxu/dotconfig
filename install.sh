@@ -7,6 +7,67 @@ set -e
 # Supports: Linux and macOS
 # ============================================================
 
+ensure_prek() {
+    if command -v prek &>/dev/null && prek install --help | grep -Fq -- '--hook-command'; then
+        return
+    fi
+
+    echo "Installing prek for the current user..."
+    (
+        installer=$(mktemp)
+        trap 'rm -f "$installer"' EXIT
+        curl --proto '=https' --tlsv1.2 -fsSL \
+            https://github.com/j178/prek/releases/download/v0.5.12/prek-installer.sh \
+            -o "$installer"
+        PREK_INSTALL_DIR="$HOME/.local/bin" PREK_NO_MODIFY_PATH=1 sh "$installer"
+    )
+    hash -r
+    prek --version
+}
+
+setup_prek_hook() (
+    export PATH="$HOME/.local/bin:$PATH"
+    ensure_prek
+    cd "$HOME/.config"
+    launcher=$(printf 'bash scripts/zed-post-commit.sh %q' "$(command -v prek)")
+    hook=$(git rev-parse --git-path hooks/post-commit)
+    install_args=(--hook-type post-commit --hook-command "$launcher")
+    hooks_path_setting=$(git config --show-scope --get core.hooksPath || true)
+    registered_hook_command='"$(git rev-parse --path-format=absolute --git-common-dir)/dotconfig-prek/hooks/post-commit"'
+    current_command=$(git config --local --get hook.dotconfig-prek.command || true)
+
+    case "$hooks_path_setting" in
+        ''|local$'\t'*|worktree$'\t'*) use_registered_hook=false ;;
+        *) use_registered_hook=true ;;
+    esac
+    if [ "$use_registered_hook" = true ] || [ "$current_command" = "$registered_hook_command" ]; then
+        if ! git hook list -h 2>&1 | grep -Fq 'git hook list'; then
+            echo "Error: Git 2.54 or newer is required to enable prek alongside the shared hooks directory." >&2
+            exit 1
+        fi
+        hook_git_dir="$(git rev-parse --path-format=absolute --git-common-dir)/dotconfig-prek"
+        hook="$hook_git_dir/hooks/post-commit"
+        install_args+=(--git-dir "$hook_git_dir")
+        use_registered_hook=true
+    fi
+
+    if [ ! -x "$hook" ] || ! grep -Fq -- "exec $launcher hook-impl " "$hook"; then
+        prek install "${install_args[@]}"
+        echo "Installed the prek post-commit hook."
+    else
+        echo "The prek post-commit hook is already installed."
+    fi
+
+    if [ "$use_registered_hook" = true ]; then
+        if [ "$current_command" != "$registered_hook_command" ]; then
+            git config --local hook.dotconfig-prek.command "$registered_hook_command"
+        fi
+        if [ "$(git config --local --get hook.dotconfig-prek.event || true)" != post-commit ]; then
+            git config --local hook.dotconfig-prek.event post-commit
+        fi
+    fi
+)
+
 apply_zed_settings() {
     if ! command -v python3 &>/dev/null; then
         echo "Error: Python 3 is required to apply shared Zed settings." >&2
@@ -73,6 +134,10 @@ fi
 # ---- Apply Zed Settings ----
 
 apply_zed_settings
+
+# ---- Install prek and Set Up the Git Hook ----
+
+setup_prek_hook
 
 # ---- Enable Fish Shell ----
 

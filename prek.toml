@@ -1,0 +1,14 @@
+default_install_hook_types = ["post-commit"]
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "zed-settings-export"
+name = "Export shared Zed settings"
+entry = "bash scripts/zed-post-commit.sh --commit"
+language = "system"
+stages = ["post-commit"]
+always_run = true
+pass_filenames = false
+verbose = true
