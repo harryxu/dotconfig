@@ -7,6 +7,20 @@ set -e
 # Supports: Linux and macOS
 # ============================================================
 
+apply_zed_settings() {
+    if ! command -v python3 &>/dev/null; then
+        echo "Error: Python 3 is required to apply shared Zed settings." >&2
+        return 1
+    fi
+
+    "$HOME/.config/zed/apply_settings.py"
+}
+
+if [ "${1:-}" = "--zed-settings" ]; then
+    apply_zed_settings
+    exit
+fi
+
 # ---- Environment Check ----
 
 # Check if git is installed
@@ -55,6 +69,10 @@ if [ ! -d "$HOME/.config/.git" ]; then
 else
     echo "dotconfig repository already exists in ~/.config, skipping clone."
 fi
+
+# ---- Apply Zed Settings ----
+
+apply_zed_settings
 
 # ---- Enable Fish Shell ----
 
