@@ -12,13 +12,6 @@ end
 
 alias tmux='tmux -u'
 
-# pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
-if test -e $PYENV_ROOT
-    fish_add_path -m $PYENV_ROOT/bin
-    pyenv init - | source
-end
-
 # bat command theme
 set -Ux BAT_THEME ansi
 
